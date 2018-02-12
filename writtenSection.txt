@@ -2,27 +2,55 @@ Answer each question in a written format
 
 1. What does semantic HTML mean?
 
+    Semantic HTML defines using element and class names to your advantage by using words that clearly outline their purpose. This allows your html code to communicate with the browser effortlessly. For example, if creating a table, you would then use <table>. Other examples may include <form>; <section>; or <footer>.
+
 2. What is the box model?
+
+    The box-model is mainly regarding design and style. It incorporates the fact that almost every aspect of a webpage is a made up of margin, borders, padding and content. With these, you build a box out of every element that graces the webpage. 
 
 3. What is the difference between IDs and Classes?
 
+    ID's and classes mainly differ in their importance. Coming from a hierarchal standpoint, ID's take precedence over a class. Furthermore, ID's are limited in that you are only allowed to utilize one ID per file where classes can be used as often as needed. 
+
 4. What does the z-index do?
+
+    The z-index property refers to the vertical order of the element(s). The z-index can only be utilized if the element is taken off the static positioning and it involves how close the element is to you and whether or not it is in front of other elements. The higher the index - the closer it is. 
 
 5. Summarize what the keyword 'this' is used for?
 
+    'this' refers to the context of functions or objects. 'this' can be used in direct relation to an objects properties, as well as being used to bind the 'this' of a function so that it's 'this' can be used elsewhere. 
+
 6. What is a callback?
+    
+    A callback is a function that is passed into another function as a parameter. This callback is then called upon within the function that it was passed into to finish the action. Callbacks can be used synchronously or asynchronously, depending on their purpose. 
 
 7. What is a closure?
 
+    A closure is a function within a function that carries access to global variables outside of its direct scope. With closures, which is a standard function in format it just requires a declared inner function contained within another function, you have an inner scope between the closure curly brackets, you have access to it's outer function as well as access to the global variables as well.
+
 8. How does prototype work?
+
+    Prototype in Javascript involves the fact that there are default methods that can be called upon as object properties. Depending on the type of your data, you are able to modify the prototype object by creating your own prototpe functions usuing the 'new' keyword, as well as using the specific default metohds like pop() or shift() for arrays, or split() to turn strings into arrays. These functions come from the prototype object naturally. 
+
 
 9. What is MVC?
 
+    MVC stands for MODEL VIEW CONTROLLER where the entire application or website is divided into 3 main pieces to define or patternize the design features. The 'Model' refers to the actual data of the application. The 'View' which is related to look of the interface and what the user sees. Lastly, the 'controller' is where data can be updated, altered or changed. 
+
 10. What is the component lifecycle?
+
+    A component's lifecycle spans the inner workings of the component in between refreshes as well as its actions as it loads. Looking at the phases of this lifecycle, you will find that their is a mounting phase, a potential updating phase that uses multiple possible methods to help the component re-render an unmounting phase and lastly a catch phase if the components lifecycle ends in an error. 
+
 
 11. What is REST?
 
+    REST is representational state transfer. Involving the REST verbs like GET, POST, PUT, DELETE, REST is a way for the client to communicate with the server and vice versa. There are other ways of communication but REST is preferred when using API's.
+
 12. Name three ways of getting data from the URL using express
+
+    1) req.params
+    2) req.query
+    3) req.body / res.data
 
 create table users (
 id serial,
@@ -32,10 +60,19 @@ email varchar(255)
 
 12. Given the Schema above, write the following four basic CRUD db queries using postgres syntax
 
--Get all users:
+-Get all users: 
+
+SELECT * FROM users; SELECT users.name, users.email FROM users;
 
 -Create a new user with the name of 'your name' and an email of 'fake@fake.com':
+    
+INSERT INTO users (name, email) VALUES ('your name', 'fake@fake.com');
 
 -Update the newly created user's name to 'Bobby Boy':
 
+UPDATE users SET name = 'Bobby Boy' WHERE email = 'fake@fake.com';
+ALTER USER 'your name' RENAME TO 'Bobby Boy';
+
 -Delete the newly updated user:
+
+DELETE FROM users WHERE name = 'Bobby Boy';
